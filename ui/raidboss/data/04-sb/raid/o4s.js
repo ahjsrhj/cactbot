@@ -7,6 +7,16 @@
   timelineFile: 'o4s.txt',
   timelineTriggers: [
     {
+      id: 'Sugar wings',
+      regex: /call sugar wings/,
+      beforeSeconds: 3,
+      alertText: {
+        en: 'Vacuum Wave soon',
+        de: 'Vakuumwelle bald',
+        cn: '快开翅膀',
+      },
+    },
+    {
       id: 'O4S Neo Vacuum Wave',
       regex: /Vacuum Wave/,
       beforeSeconds: 8,

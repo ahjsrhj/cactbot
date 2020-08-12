@@ -37,6 +37,7 @@
 
 
 ######Phase 1
+10  "call sugar wings"
 13	"Dualcast"	sync /:Exdeath:23F4:/ window 20,0
 16	"Blizzard III"
 19	"Blizzard III"
