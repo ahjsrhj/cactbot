@@ -1,0 +1,71 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="../../resources/defaults.css">
+  <link rel="stylesheet" href="../../resources/resize_handle.css">
+  <script src="../../resources/common.js"></script>
+  <script src="../../resources/zone_id.js"></script>
+  <script src="../../resources/party.js"></script>
+  <script src="../../resources/regexes.js"></script>
+  <script src="../../resources/netregexes.js"></script>
+  <script src="../../resources/conditions.js"></script>
+  <script src="../../resources/responses.js"></script>
+  <script src="../../resources/resize_handle.js"></script>
+  <script src="../../resources/timerbar.js"></script>
+  <script src="../../resources/widgetlist.js"></script>
+  <script src="../../resources/user_config.js"></script>
+  <script src="../../resources/lang.js"></script>
+  <script src="../../resources/lang/en.js"></script>
+  <script src="../../resources/lang/de.js"></script>
+  <script src="../../resources/lang/fr.js"></script>
+  <script src="../../resources/lang/ja.js"></script>
+  <script src="../../resources/lang/ko.js"></script>
+  <script src="../../resources/lang/cn.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="raidboss.css">
+  <script src="common_replacement.js"></script>
+  <script src="raidboss_config.js"></script>
+  <script src="timeline.js"></script>
+  <script src="browser_tts_engine.js"></script>
+  <script src="autoplay_helper.js"></script>
+  <script src="popup-text.js"></script>
+  <script src="raidboss.js"></script>
+</head>
+<body>
+<div id="container">
+  <div id="timeline-container">
+    <div class="resize-helper">
+      <div id="timeline-resize-helper" class="timeline-grid"></div>
+    </div>
+    <div id="timeline-debug" class="just-a-number"></div>
+    <div id="timeline" class="timeline-grid"></div>
+  </div>
+
+  <div id="popup-text-container">
+    <div id="popup-text-alarm" class="text">
+      <div class="holder"></div>
+      <span class="resize-helper alarm-text">
+        <div>使用提示</div>
+        <div>触发器会显示在这里</div>
+      </span>
+    </div>
+    <div id="popup-text-alert" class="text">
+      <div class="holder"></div>
+      <span class="resize-helper alert-text">
+        <div>请拉大悬浮窗并调整到合适位置</div>
+        <div>锁定后测试文本和蓝色背景会消失</div>
+      </span>
+    </div>
+    <div id="popup-text-info" class="text">
+      <div class="holder"></div>
+      <span class="resize-helper info-text">
+        <div>支持的副本会自动显示时间轴和触发器</div>
+        <div>在盛夏农庄对木人行礼或战斗倒计时可以测试</div>
+        <div>千万不要忘记勾选鼠标穿透</div>
+      </span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
