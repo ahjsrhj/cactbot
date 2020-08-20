@@ -1,7 +1,7 @@
 'use strict';
 
 let Options = {
-  Language: 'cn',
+  Language: 'en',
 };
 
 let gPullCounter;

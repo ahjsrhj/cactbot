@@ -604,11 +604,12 @@ class TimelineUI {
 
   InitDebugUI() {
     let timelineText = [
-      '时间轴会显示在这里',
-      '锁定悬浮窗后会消失',
-      '在支持的副本里',
-      '时间轴会自动出现',
-      '不需要额外设置',
+      'These lines are',
+      'debug timeline entries.',
+      'If you lock the overlay,',
+      'they will disappear!',
+      'Real timelines automatically',
+      'appear when supported.',
     ];
 
     // Helper for positioning/resizing when locked.

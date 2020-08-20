@@ -866,7 +866,7 @@ UserConfig.registerOptions('raidboss', {
           '❌ 비활성화': 'disabled',
         },
       },
-      default: 'ttsAndText',
+      default: 'textAndSound',
       setterFunc: setOptionsFromOutputValue,
     },
     {

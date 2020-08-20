@@ -26,7 +26,7 @@ UserConfig.registerOptions('radar', {
         ko: '새 몬스터를 TTS로 알림',
       },
       type: 'checkbox',
-      default: true,
+      default: false,
     },
     {
       id: 'PopSoundAlert',
@@ -39,7 +39,7 @@ UserConfig.registerOptions('radar', {
         ko: '새 몬스터를 소리로 알림',
       },
       type: 'checkbox',
-      default: false,
+      default: true,
     },
     {
       id: 'PopVolume',

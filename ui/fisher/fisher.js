@@ -1,7 +1,6 @@
 'use strict';
 
 let Options = {
-  Language: 'cn',
   IQRHookQuantity: 100,
   IQRTugQuantity: 10,
   Colors: {

@@ -8,7 +8,8 @@ let effectCollectSeconds = 2.0;
 // args: triggerId, netRegex, field, type, ignoreSelf
 let missedFunc = (args) => {
   return {
-    id: args.triggerId,
+    // Sure, not all of these are "buffs" per se, but they're all in the buffs file.
+    id: 'Buff ' + args.triggerId,
     netRegex: args.netRegex,
     condition: function(evt, data, matches) {
       return data.party.partyNames.includes(matches.source);
@@ -126,72 +127,10 @@ let missedHeal = (args) => {
 
 let missedMitigationAbility = missedHeal;
 
-// General mistakes; these apply everywhere.
 [{
   zoneRegex: /.*/,
   zoneId: ZoneId.MatchAll,
   triggers: [
-    {
-      // Trigger id for internally generated early pull warning.
-      id: 'General Early Pull',
-    },
-    {
-      id: 'General Food Buff',
-      losesEffectRegex: gLang.kEffect.WellFed,
-      condition: function(e, data) {
-        // Prevent "Eos loses the effect of Well Fed from Critlo Mcgee"
-        return e.targetName == e.attackerName;
-      },
-      mistake: function(e, data) {
-        data.lostFood = data.lostFood || {};
-        // Well Fed buff happens repeatedly when it falls off (WHY),
-        // so suppress multiple occurrences.
-        if (!data.inCombat || data.lostFood[e.targetName])
-          return;
-        data.lostFood[e.targetName] = true;
-        return {
-          type: 'warn',
-          blame: e.targetName,
-          text: {
-            en: 'lost food buff',
-            de: 'Nahrungsbuff verloren',
-            fr: 'Buff nourriture terminée',
-            cn: '失去食物BUFF',
-            ko: '음식 버프 해제',
-          },
-        };
-      },
-    },
-    {
-      id: 'General Well Fed',
-      gainsEffectRegex: gLang.kEffect.WellFed,
-      run: function(e, data) {
-        if (!data.lostFood)
-          return;
-        delete data.lostFood[e.targetName];
-      },
-    },
-    {
-      id: 'General Rabbit Medium',
-      abilityRegex: '8E0',
-      condition: function(e, data) {
-        return data.IsPlayerId(e.attackerId);
-      },
-      mistake: function(e, data) {
-        return {
-          type: 'warn',
-          blame: e.attackerName,
-          text: {
-            en: 'bunny',
-            de: 'Hase',
-            fr: 'lapin',
-            ja: 'うさぎ',
-            cn: '兔子',
-            ko: '토끼',
-          },
-        };
-      },
-    },
 
     // Prefer abilities to effects, as effects take longer to roll through the party.
     // However, some things are only effects and so there is no choice.
@@ -244,7 +183,9 @@ let missedMitigationAbility = missedHeal;
     missedHeal({ id: 'Indomitability', abilityId: 'DFF' }),
     missedHeal({ id: 'Deployment Tactics', abilityId: 'E01' }),
     missedHeal({ id: 'Whispering Dawn', abilityId: '323' }),
-    missedHeal({ id: 'Fey Blessing', abilityId: '409F' }),
+    // TODO: need a person->pet mapping for these as well
+    // because otherwise the fairy is not a party member.
+    missedHeal({ id: 'Fey Blessing', abilityId: '40A0' }),
     missedHeal({ id: 'Consolation', abilityId: '40A3' }),
     missedHeal({ id: 'Angel\'s Whisper', abilityId: '40A6' }),
     missedMitigationAbility({ id: 'Fey Illumination', abilityId: '325' }),
